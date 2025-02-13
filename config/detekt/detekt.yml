@@ -1,0 +1,88 @@
+config:
+  validation: true
+  warningsAsErrors: false
+  excludes: ""
+
+# Ref: https://detekt.dev/docs/rules/comments
+comments:
+  UndocumentedPublicClass:
+    active: true
+  UndocumentedPublicFunction:
+    active: true
+  UndocumentedPublicProperty:
+    active: true
+
+# Ref: https://detekt.dev/docs/rules/complexity
+complexity:
+  LargeClass:
+    active: true
+    threshold: 600
+  LongParameterList:
+    active: true
+    constructorThreshold: 6
+    functionThreshold: 6
+  LongMethod:
+    active: true
+    threshold: 60
+    excludes:
+      - '**/test/**'
+  CyclomaticComplexMethod:
+    active: true
+    threshold: 15
+  NestedBlockDepth:
+    active: true
+    threshold: 4
+  TooManyFunctions:
+    active: true
+    thresholdInFiles: 11
+    thresholdInClasses: 11
+    thresholdInInterfaces: 11
+    thresholdInObjects: 11
+    thresholdInEnums: 11
+
+# Ref: https://detekt.dev/docs/rules/exceptions
+exceptions:
+  TooGenericExceptionCaught:
+    active: false
+
+# Ref: https://detekt.dev/docs/rules/style
+style:
+  MaxLineLength:
+    maxLineLength: 112
+  ForbiddenComment:
+    active: false
+  ClassOrdering:
+    active: true
+  MagicNumber:
+    excludes: [ '**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/androidUnitTest/**', '**/androidInstrumentedTest/**', '**/jsTest/**', '**/iosTest/**', '**/*.kts',"**/GeometryHelper.kt" ]
+
+# Ref: https://detekt.dev/docs/rules/formatting
+formatting:
+  autoCorrect: true
+  MaximumLineLength:
+    maxLineLength: 112
+  ContextReceiverMapping:
+    active: true
+  DiscouragedCommentLocation:
+    active: true
+  EnumWrapping:
+    active: true
+  FunctionName:
+    active: true
+  FunctionSignature:
+    maxLineLength: 112
+    active: true
+  IfElseBracing:
+    active: true
+  ParameterListSpacing:
+    active: true
+  TrailingCommaOnCallSite:
+    active: true
+  TrailingCommaOnDeclarationSite:
+    active: true
+  TryCatchFinallySpacing:
+    active: true
+  TypeArgumentListSpacing:
+    active: true
+  TypeParameterListSpacing:
+    active: true
