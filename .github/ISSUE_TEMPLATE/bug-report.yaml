@@ -1,0 +1,40 @@
+name: Bug Report
+description: Let us know about a bug
+labels:
+  - bug
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: What is the issue?
+      description: |
+        Describe the bug here. Please provide as much information as possible.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What is the expected behavior?
+      description: |
+        Please describe the expected behavior here.
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: How can we reproduce the bug?
+      description: |
+        Include repro steps and associated relevant information here.
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: notes
+      description: |
+        Any additional information should be included here.
+    validations:
+      required: false
