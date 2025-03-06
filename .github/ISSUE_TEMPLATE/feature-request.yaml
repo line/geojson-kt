@@ -1,0 +1,40 @@
+name: Feature Request
+description: Suggest a new feature or enhancement
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What should this feature do?
+      description: |
+        Describe the feature or enhancement (what it should do, etc.) here.
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why is it needed?
+      description: |
+        Include information about why the feature should be implemented here.
+    validations:
+      required: true
+
+  - type: textarea
+    id: how
+    attributes:
+      label: How should it be implemented?
+      description: |
+        If known, any suggestions / ideas on how the feature could implemented.
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: |
+        Any additional information should be included here.
+    validations:
+      required: false

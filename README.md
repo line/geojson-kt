@@ -55,7 +55,7 @@ We ask that all contributors review and agree to adhere to our code of conduct p
 ## License
 
 ```
-Copyright 2024 LY Corporation
+Copyright 2024 - 2025 LY Corporation
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
