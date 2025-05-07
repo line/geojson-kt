@@ -1,12 +1,11 @@
 package jp.co.lycorp.geojson.jackson
 
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import jp.co.lycorp.geojson.BBox
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 class BBoxSerializationTest {
-    private val mapper = jacksonObjectMapper()
+    private val mapper = geojsonObjectMapper()
 
     @Test
     fun `should serialize BBox when valid BBox is provided`() {

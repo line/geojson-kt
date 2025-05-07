@@ -1,6 +1,5 @@
 package jp.co.lycorp.geojson.jackson
 
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import jp.co.lycorp.geojson.BBox
 import jp.co.lycorp.geojson.Polygon
 import jp.co.lycorp.geojson.Position
@@ -9,7 +8,7 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 class PolygonSerializationTest {
-    private val mapper = jacksonObjectMapper()
+    private val mapper = geojsonObjectMapper()
 
     @Test
     fun `should serialize Polygon when valid Polygon without holes is provided`() {

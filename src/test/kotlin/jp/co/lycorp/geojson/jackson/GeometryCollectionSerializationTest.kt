@@ -1,6 +1,5 @@
 package jp.co.lycorp.geojson.jackson
 
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import jp.co.lycorp.geojson.GeometryCollection
 import jp.co.lycorp.geojson.LineString
 import jp.co.lycorp.geojson.Point
@@ -10,7 +9,7 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 class GeometryCollectionSerializationTest {
-    private val mapper = jacksonObjectMapper()
+    private val mapper = geojsonObjectMapper()
 
     @Test
     fun `should serialize GeometryCollection when valid GeometryCollection is provided`() {

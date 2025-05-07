@@ -1,6 +1,5 @@
 package jp.co.lycorp.geojson.jackson
 
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import jp.co.lycorp.geojson.BBox
 import jp.co.lycorp.geojson.Feature
 import jp.co.lycorp.geojson.FeatureId
@@ -12,7 +11,7 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 class FeatureSerializationTest {
-    private val mapper = jacksonObjectMapper()
+    private val mapper = geojsonObjectMapper()
 
     @Test
     fun `should serialize Feature when valid Feature with id of a string is provided`() {

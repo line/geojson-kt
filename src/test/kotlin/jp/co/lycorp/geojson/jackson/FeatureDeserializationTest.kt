@@ -1,6 +1,5 @@
 package jp.co.lycorp.geojson.jackson
 
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.matchers.string.shouldContain
 import io.kotest.property.Exhaustive
@@ -20,7 +19,7 @@ import org.junit.jupiter.api.Test
 import java.io.IOException
 
 class FeatureDeserializationTest {
-    private val mapper = jacksonObjectMapper()
+    private val mapper = geojsonObjectMapper()
 
     @Test
     fun `should deserialize to Feature when valid GeoJSON with id of a string is provided`() {
