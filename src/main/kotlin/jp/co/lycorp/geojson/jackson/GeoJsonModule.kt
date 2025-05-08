@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.module.SimpleModule
 import com.fasterxml.jackson.databind.module.SimpleSerializers
 import jp.co.lycorp.geojson.BBox
 import jp.co.lycorp.geojson.FeatureId
+import jp.co.lycorp.geojson.Geometry
 import jp.co.lycorp.geojson.Position
 
 /**
@@ -12,10 +13,14 @@ import jp.co.lycorp.geojson.Position
  */
 class GeoJsonModule : SimpleModule() {
     override fun setupModule(context: SetupContext) {
+        super.setupModule(context)
+
         val deserializers = SimpleDeserializers()
         deserializers.addDeserializer(BBox::class.java, BBoxDeserializer())
         deserializers.addDeserializer(FeatureId::class.java, FeatureIdDeserializer())
         deserializers.addDeserializer(Position::class.java, PositionDeserializer())
+        deserializers.addDeserializer(Geometry::class.java, GoeJsonObjectDeserializer())
+
         context.addDeserializers(deserializers)
 
         val serializers = SimpleSerializers()
