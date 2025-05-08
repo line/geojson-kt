@@ -15,6 +15,9 @@ import jp.co.lycorp.geojson.MultiPolygon
 import jp.co.lycorp.geojson.Point
 import jp.co.lycorp.geojson.Polygon
 
+/**
+ * Deserializer for all GeoJSON object
+ */
 class GoeJsonObjectDeserializer<T: GeoJsonObject>: JsonDeserializer<T>() {
     override fun deserialize(p: JsonParser, ctxt: DeserializationContext): T {
         val node: JsonNode = p.codec.readTree(p)
