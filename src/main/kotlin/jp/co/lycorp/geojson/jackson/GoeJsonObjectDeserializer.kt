@@ -16,7 +16,7 @@ import jp.co.lycorp.geojson.Point
 import jp.co.lycorp.geojson.Polygon
 
 /**
- * Deserializer for all GeoJSON object
+ * Deserializer for all GeoJSON objects.
  */
 class GoeJsonObjectDeserializer<T : GeoJsonObject> : JsonDeserializer<T>() {
     override fun deserialize(p: JsonParser, ctxt: DeserializationContext): T {
