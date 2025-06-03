@@ -31,12 +31,13 @@ jobs:
       - name: Run test
         run: ./gradlew check --no-daemon
 
-      - name: Publish test reports
-        uses: mikepenz/action-junit-report@v3
+      - name: Upload Test Report
+        uses: actions/upload-artifact@v3
         if: always()
         with:
-          report_paths: |
-            **/build/test-results/test/TEST-*.xml
+          name: junit-test-results
+          path: '**/build/test-results/test/TEST-*.xml'
+          retention-days: 1
 
       - name: Create coverage report
         if: ${{ github.event.pull_request }}
@@ -54,3 +55,30 @@ jobs:
           min-coverage-overall: 80
           min-coverage-changed-files: 80
           coverage-counter-type: LINE
+
+---
+name: report
+on:
+  workflow_run:
+    workflows: [ Upload Test Report ]
+    types: [ completed ]
+
+permissions:
+  checks: write
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Test Report
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          name: junit-test-results
+          workflow: ${{ github.event.workflow.id }}
+          run_id: ${{ github.event.workflow_run.id }}
+
+      - name: Publish Test Report
+        uses: mikepenz/action-junit-report@v5
+        with:
+          commit: ${{github.event.workflow_run.head_sha}}
+          report_paths: '**/build/test-results/test/TEST-*.xml'
