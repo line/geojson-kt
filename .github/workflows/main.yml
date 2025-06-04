@@ -5,14 +5,6 @@ on:
     branches:
       - main
   pull_request:
-#
-#permissions:
-#  # Required by mikepenz/action-junit-report
-#  checks: write
-#  # Required by actions/checkout
-#  contents: read
-#  # Required by mi-kas/kover-report
-#  pull-requests: write
 
 jobs:
   test:
@@ -38,23 +30,6 @@ jobs:
           name: junit-test-results
           path: '**/build/test-results/test/TEST-*.xml'
           retention-days: 1
-
-#      - name: Create coverage report
-#        if: ${{ github.event.pull_request }}
-#        run: ./gradlew koverXmlReport
-#
-#      - name: Post coverage report as comment
-#        if: ${{ github.event.pull_request }}
-#        uses: mi-kas/kover-report@v1
-#        with:
-#          token: ${{ secrets.GITHUB_TOKEN }}
-#          path: |
-#            ${{ github.workspace }}/build/reports/kover/report.xml
-#          title: Code Coverage
-#          update-comment: true
-#          min-coverage-overall: 80
-#          min-coverage-changed-files: 80
-#          coverage-counter-type: LINE
 
 ---
 name: report
