@@ -18,7 +18,7 @@ import jp.co.lycorp.geojson.Polygon
 /**
  * Deserializer for all GeoJSON objects.
  */
-class GoeJsonObjectDeserializer<T : GeoJsonObject> : JsonDeserializer<T>() {
+class GeoJsonObjectDeserializer<T : GeoJsonObject> : JsonDeserializer<T>() {
     override fun deserialize(p: JsonParser, ctxt: DeserializationContext): T {
         val node: JsonNode = p.codec.readTree(p)
         val type = node.get("type")?.asText()

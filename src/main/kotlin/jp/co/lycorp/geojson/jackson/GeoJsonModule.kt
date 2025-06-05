@@ -23,7 +23,7 @@ class GeoJsonModule : SimpleModule() {
         deserializers.addDeserializer(BBox::class.java, BBoxDeserializer())
         deserializers.addDeserializer(FeatureId::class.java, FeatureIdDeserializer())
         deserializers.addDeserializer(Position::class.java, PositionDeserializer())
-        deserializers.addDeserializer(Geometry::class.java, GoeJsonObjectDeserializer())
+        deserializers.addDeserializer(Geometry::class.java, GeoJsonObjectDeserializer())
 
         context.addDeserializers(deserializers)
 
