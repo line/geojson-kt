@@ -1,6 +1,5 @@
 package jp.co.lycorp.geojson.jackson
 
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import jp.co.lycorp.geojson.MultiPolygon
 import jp.co.lycorp.geojson.Position
 import jp.co.lycorp.geojson.extensions.JsonUtils.toCompactedJson
@@ -9,7 +8,7 @@ import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
 class MultiPolygonDeserializationTest {
-    private val mapper = jacksonObjectMapper()
+    private val mapper = geojsonObjectMapper()
 
     @Test
     fun `should deserialize to MultiPolygon when valid GeoJSON is provided`() {

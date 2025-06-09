@@ -10,7 +10,7 @@ import jp.co.lycorp.geojson.FeatureId
  *
  * Custom deserializer for feature id.
  */
-internal class FeatureIdDeserializer : StdDeserializer<Any?>(FeatureId::class.java) {
+internal class FeatureIdDeserializer : StdDeserializer<FeatureId>(FeatureId::class.java) {
     override fun deserialize(p: JsonParser, ctxt: DeserializationContext): FeatureId {
         return when {
             p.currentToken.isNumeric -> FeatureId.of(p.numberValue)

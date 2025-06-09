@@ -1,6 +1,5 @@
 package jp.co.lycorp.geojson.jackson
 
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.matchers.string.shouldContain
 import io.kotest.property.Exhaustive
@@ -14,7 +13,7 @@ import org.junit.jupiter.api.Test
 import java.io.IOException
 
 class BBoxDeserializationTest {
-    private val mapper = jacksonObjectMapper()
+    private val mapper = geojsonObjectMapper()
 
     @Test
     fun `should deserialize to BBox when valid GeoJSON is provided()`() {

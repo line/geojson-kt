@@ -1,10 +1,5 @@
 package jp.co.lycorp.geojson
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize
-import com.fasterxml.jackson.databind.annotation.JsonSerialize
-import jp.co.lycorp.geojson.jackson.BBoxDeserializer
-import jp.co.lycorp.geojson.jackson.BBoxSerializer
-
 /**
  * BBox class
  *
@@ -17,8 +12,6 @@ import jp.co.lycorp.geojson.jackson.BBoxSerializer
  * @property minAlt Altitude of the most southwesterly point (optional)
  * @property maxAlt Altitude of the most northeasterly point (optional)
  */
-@JsonDeserialize(using = BBoxDeserializer::class)
-@JsonSerialize(using = BBoxSerializer::class)
 data class BBox(
     val minLng: Double,
     val minLat: Double,
